@@ -536,7 +536,7 @@ namespace
 
 void findDataMatrix(const cv::Mat& image, std::vector<DataMatrixCode>& codes)
 {
-  CvMat m(image);
+  CvMat m = cvMat(image);
   deque <CvDataMatrixCode> rc = cvFindDataMatrix(&m);
   codes.clear();
   codes.resize(rc.size());
